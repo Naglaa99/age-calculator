@@ -18,31 +18,37 @@ function calculateAge(event) {
     const months = Math.floor(differenceTime / msPerMonth % 12);
     const days = Math.floor(differenceTime / msPerDay % 30.44);
 
-    const output = document.querySelector('.outform')
+    const output = document.querySelector('.outform');
     output.innerHTML = `
-    <h1><span >${years}</span>years</h1>
-    <h1><span>${months}</span>months</h1>
-    <h1><span>${days}</span>days</h1>
-    `
+  <h1><span>${years ? years : '--'}</span>years</h1>
+  <h1><span>${months ? months : '--'}</span>months</h1>
+  <h1><span>${days ? days : '--'}</span>days</h1>
+`;
 }
 ////////////validation////////
 function validateForm() {
     const day = document.querySelector('#day').value;
     const month = document.querySelector('#month').value;
     const year = document.querySelector('#year').value;
-    const errorDay = document.querySelector('#error-day');
-    const errorMonth = document.querySelector('#error-month');
-    const errorYear = document.querySelector('#error-year');
+    const errorday = document.querySelector('.dayerror');
+    const errormonth = document.querySelector('.montherror');
+    const erroryear = document.querySelector('.yearerror');
+
     let isValid = true;
     if (day < 1 || day > 31) {
-        errorDay.textContent = "Must be a valid day"
+        document.querySelector('#day').style.borderColor = "red"
+        errorday.textContent = "Must be a valid day"
         isValid = false;
-
 
     }
 
+
+
+
     if (month < 1 || month > 12) {
-        errorMonth.textContent = "Must be valid month"
+        document.querySelector('#month').style.borderColor = "red"
+
+        errormonth.textContent = "Must be valid month"
         isValid = false;
 
 
@@ -50,9 +56,13 @@ function validateForm() {
     }
 
     if (year > new Date().getFullYear()) {
-        errorYear.textContent = "Must be in the past"
+        document.querySelector('#year').style.borderColor = "red"
+
+        erroryear.textContent = "Must be in the past"
         isValid = false;
 
     }
+
+    return isValid;
 
 }

@@ -34,6 +34,13 @@ Users should be able to:
 
 ![](./assets/images/Capture.PNG)
 
+## Validation
+![](./assets/images/validat1.PNG)
+![](./assets/images/validate2.PNG)
+![](./assets/images/validate3.PNG)
+
+
+
 
 
 

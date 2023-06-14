@@ -4,8 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="age.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,37 +15,29 @@
   <div class="card">
     <div class="container">
       <form onsubmit="return validateForm()">
-        <div class="row">
-          <div class=" col-3">
+        <div class="form-container">
+          <div class="inputblock">
             <label for="day" class="form-label">DAY</label>
-            <input type="number" class="form-control" id="day" value="day" placeholder="dd" required>
-            <span id="error-day" class="message"></span>
-
+            <input type="number" id="day" value="day" placeholder="DD" required>
+            <small class="dayerror"></small>
           </div>
-          <div class=" col-3">
+          <div class="inputblock">
             <label for="month" class="form-label">MONTH</label>
-            <input type="number" class="form-control" id="month" value="month" placeholder="yy" required>
-            <span id="error-month" class="message"></span>
-
+            <input type="number" id="month" value="month" placeholder="MM" required>
+            <small class="montherror"></small>
           </div>
-          <div class=" col-3">
+          <div class="inputblock">
             <label for="year" class="form-label">YEAR</label>
-            <input type="number" class="form-control" id="year" value="year" placeholder="mm" required>
-            <span id="error-year" class="message"></span>
-
+            <input type="number" id="year" value="year" placeholder="YYYY" required>
+            <small class="yearerror"></small>
           </div>
         </div>
-        <div class="row mt-4">
-          <div class="col-10">
-            <hr>
-          </div>
-          <div class="col-2 d-flex">
-            <button type="submit"><img src="./assets/images/icon-arrow.svg" /></button>
+        <div class="submit">
+          <hr>
+          <button type="submit"><img src="./assets/images/icon-arrow.svg" /></button>
 
-          </div>
+
         </div>
-
-
       </form>
       <div class="outform">
         <h1><span>-- </span>years</h1>

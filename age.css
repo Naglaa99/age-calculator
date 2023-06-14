@@ -5,50 +5,77 @@
 }
 
 body {
-  background-color: hsl(0, 0%, 8%);
+  background-color: hsl(0, 0%, 94%);
   align-items: center;
   display: flex;
   justify-content: center;
   min-height: 100vh;
 }
 
+.container {
+  margin: 10px;
+  padding: 10px;
+
+}
+
 .card {
   background-color: white;
   width: 600px;
   border-radius: 10px;
-  border-bottom-right-radius: 40%;
+  border-bottom-right-radius: 30%;
+  padding: 40px;
 }
 
-.container {
-  margin: 30px;
-  padding: 20px;
-
-
+form {
+  display: flex;
+  flex-direction: column;
 }
 
-input[type="number"] {
-  font-size: 32px;
-  width: 120px;
-  height: 70px;
-
-
+.form-container {
+  display: flex;
+  gap: 30px;
 }
 
+.inputblock {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  width: 100px;
+  height: 40px;
+  border: 1px solid hsl(0, 0%, 86%);
+  border-radius: .5rem;
+  font-size: 20px;
+  font-weight: 800;
+  text-align: center;
+}
+
+input::placeholder {
+  font-weight: 800;
+  text-align: center;
+  font-size: 16px;
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+}
+
+.submit hr {
+  width: 100%;
+}
 
 button {
-  border-radius: 60%;
-  width: 60px;
-  height: 60px;
+  border: none;
+  border-radius: 50%;
   background-color: hsl(259, 100%, 65%);
-  border-style: none;
-  left: 50%;
-  transform: translate(-50%);
-  margin-top: -10px;
-
+  padding: 10px;
+  cursor: pointer;
 
 }
 
-img {
+button img {
   height: 30px;
 }
 
@@ -56,30 +83,59 @@ button:hover {
   background-color: black;
 }
 
-h1 {
-  font-weight: 800;
-  font-size: 50px;
+.outform {
   font-style: italic;
-
+  height: fit-content;
+  font-size: 32px;
 }
 
 span {
   color: hsl(259, 100%, 65%);
+  ;
 }
 
-.message {
-  color: rgb(230, 45, 45);
-  font-size: 11px;
+small {
+  color: hsl(0, 100%, 67%);
 }
 
-@media(max-width: 375px) {
+@media screen and (max-width:600px) {
   .card {
     width: 350px;
   }
 
-  input[type="number"] {
+  .container {
+    margin: 5px;
+    padding: 5px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 50px;
+    justify-content: space-between;
+  }
+
+  .submit {
+    position: relative;
+  }
+
+  button {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%
+  }
+
+  .outform {
+    font-style: italic;
+    height: fit-content;
     font-size: 20px;
-    width: 100%
+    margin-top: 20px;
   }
 
 
